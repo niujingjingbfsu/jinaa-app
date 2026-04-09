@@ -1,0 +1,24 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    environment: production
+    needs: []
+    # Vercel deploys automatically via Vercel GitHub integration.
+    # This workflow is a placeholder for any post-deploy steps.
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify deployment
+        run: |
+          echo "Deployment triggered for commit ${{ github.sha }}"
+          echo "Vercel handles the actual deployment automatically."
