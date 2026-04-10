@@ -4,10 +4,21 @@
   "private": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./trpc/router": {
+      "types": "./src/trpc/router.ts",
+      "default": "./src/trpc/router.ts"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src",
     "db:generate": "drizzle-kit generate",
@@ -17,8 +28,10 @@
   },
   "dependencies": {
     "@jinaa/shared": "workspace:*",
+    "@trpc/server": "^11.16.0",
     "drizzle-orm": "^0.45.2",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

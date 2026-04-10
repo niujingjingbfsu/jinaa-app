@@ -12,7 +12,7 @@ const withSentry = withSentryConfig(nextConfig, {
   project: process.env["SENTRY_PROJECT"],
   authToken: process.env["SENTRY_AUTH_TOKEN"],
   widenClientFileUpload: true,
-  hideSourceMaps: true,
+  sourcemaps: { disable: true },
   disableLogger: true,
 });
 
