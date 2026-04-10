@@ -27,6 +27,7 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.87.0",
     "@jinaa/shared": "workspace:*",
     "@trpc/server": "^11.16.0",
     "drizzle-orm": "^0.45.2",

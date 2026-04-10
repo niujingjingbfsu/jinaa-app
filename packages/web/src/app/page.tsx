@@ -30,8 +30,8 @@ export default function HomePage() {
             { label: "CI/CD", status: "Ready", desc: "GitHub Actions pipeline" },
             { label: "Database", status: "Pending", desc: "Waiting on Supabase provisioning" },
             { label: "Vercel Deploy", status: "Pending", desc: "Waiting on board action" },
-            { label: "Auth", status: "Planned", desc: "Clerk integration in Phase 1" },
-            { label: "AI Layer", status: "Planned", desc: "Claude API streaming in Phase 1" },
+            { label: "Auth", status: "Ready", desc: "Clerk sign-in/sign-up active" },
+            { label: "AI Layer", status: "Ready", desc: "Claude streaming via /chat" },
           ].map((item) => (
             <div key={item.label} className="rounded-lg border border-border bg-card p-4">
               <div className="flex items-center justify-between mb-1">
